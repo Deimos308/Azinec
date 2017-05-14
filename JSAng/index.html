@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<head>
+    <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/angular.min.js"></script>
+    <script src="controller/controller.js"></script>
+</head>
+<body ng-controller="mainController">
+    <div class ="page-wrapper">
+        <header>
+            <div class="header-logo">
+                sd
+            </div>
+        </header>
+        <div class="strip-menu">
+            <ul class="menu-list">
+                <li><a href="#">Intel Celeron</a></li>
+                <li><a href="#">Intel Pentium</a></li>
+                <li><a href="#">Intel Core i3</a></li>
+                <li><a href="#">Intel Core i5</a></li>
+                <li><a href="#">Intel Core i7</a></li>
+            </ul>
+        </div>
+        <div class ="mainContent">
+            <div class="search-container">
+                <p>Filter: <input type="text" name="searchField" ng-model="searchField"></p>
+            </div>
+            <div class ="table-container">
+                <table border="1" style="margin: auto;">
+                    <caption><span class = "title">Intel Core i7 Haswell</span></caption>
+                    <tr>
+                        <th><a href="" ng-click ="orderByParam('name')" >Name</a></th>
+                        <th><a href="" ng-click ="orderByParam('frequency')">Frequency</a></th>
+                        <th><a href="" ng-click ="orderByParam('cores')">Cores</a></th>
+                        <th><a href="" ng-click ="orderByParam('threads')">Threads</a></th>
+                        <th><a href="" ng-click ="orderByParam('cache')">Cache</a></th>
+                        <th><a href="" ng-click ="orderByParam('TDP')">TDP</a></th>
+                        <th><a href="" ng-click ="orderByParam('graphic')">Graphic</a></th>
+                    </tr>
+                    <tr ng-repeat="processor in processors | filter: searchField | orderBy: sortField:reverse">
+
+                        <td>
+                            <span ng-hide="processor.editing" ng-dblclick="editItem(processor)">{{processor.name}}</span>
+                            <input ng-show="processor.editing" ng-model="processor.name" ng-blur="doneEditing(processor)" autofocus />
+
+                        </td>
+                        <td>
+                            <span ng-hide="processor.editing" ng-dblclick="editItem(processor)">{{processor.frequency}}</span>
+                            <input ng-show="processor.editing" ng-model="processor.frequency" ng-blur="doneEditing(processor)" autofocus />
+                        </td>
+                        <td>
+                            <span ng-hide="processor.editing" ng-dblclick="editItem(processor)">{{processor.cores}}</span>
+                            <input ng-show="processor.editing" ng-model="processor.cores" ng-blur="doneEditing(processor)" autofocus />
+                        </td>
+                        <td>
+                            <span ng-hide="processor.editing" ng-dblclick="editItem(processor)">{{processor.threads}}</span>
+                            <input ng-show="processor.editing" ng-model="processor.threads" ng-blur="doneEditing(processor)" autofocus />
+                        </td>
+                        <td>
+                            <span ng-hide="processor.editing" ng-dblclick="editItem(processor)">{{processor.cache}}</span>
+                            <input ng-show="processor.editing" ng-model="processor.cache" ng-blur="doneEditing(processor)" autofocus />
+                        </td>
+                        <td>
+                            <span ng-hide="processor.editing" ng-dblclick="editItem(processor)">{{processor.TDP}}</span>
+                            <input ng-show="processor.editing" ng-model="processor.TDP" ng-blur="doneEditing(processor)" autofocus />
+                        </td>
+                        <td>
+                            <span ng-hide="processor.editing" ng-dblclick="editItem(processor)">{{processor.graphic}}</span>
+                            <input ng-show="processor.editing" ng-model="processor.graphic" ng-blur="doneEditing(processor)" autofocus />
+                        </td>
+                        <td>
+                            <span ng-show="!processor.editing" ></span>
+                            <input ng-hide="processor.editing" type="button" name="removeMe" value="X" ng-click="removeMe(processor.name)"></td>
+                    </tr>
+
+
+
+                </table>
+            </div>
+            <br>
+            <div class ="addNewProcessor">
+                <div ng-hide="spoiler" ng-click="spoilerStatementChange()"  class="spoilerUI"> + </div>
+                <div ng-show="spoiler">
+                <table border="1">
+                    <caption>Add new processor :</caption>
+                    <tr><td>Name</td><td><input type="text" ng-model="name"></td></tr>
+                    <tr><td>Frequency</td><td><input type="text" ng-model="frequency"></td></tr>
+                    <tr><td>Cores</td><td><input type="text" ng-model="cores"></td></tr>
+                    <tr><td>Threads</td><td><input type="text" ng-model="threads"></td></tr>
+                    <tr><td>Cache</td><td><input type="text" ng-model="cache"></td></tr>
+                    <tr><td>TDP</td><td><input type="text" ng-model="TDP"></td></tr>
+                    <tr><td>Graphic</td><td><input type="text" ng-model="graphic"></td></tr>
+                    <tr><td colspan="2"><input type="button" value="Add" ng-click="addNewProcessor()"></td></tr>
+                </table>
+                <div ng-click="spoilerStatementChange()" class="spoilerUI"> - </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+                <div class="arrow">
+                    <a href="#">
+                    </a>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

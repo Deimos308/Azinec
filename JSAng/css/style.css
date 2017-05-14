@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil|Fredericka+the+Great');
+
+@font-face {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+body{
+
+   background: url("../res/img/scheme.png") no-repeat fixed;
+    background-size: cover ;
+}
+p{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: rgba(44, 136, 49, 0.7);
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+    color: rgba(44, 136, 49, 0.7);
+}
+a:hover{
+    color: rgb(194, 173, 43);
+}
+input{
+    background-color: rgba(0, 0, 0, 0.73);
+    color: rgba(44, 136, 49, 0.7);
+    border-color: rgba(44,136,39,0.73);
+}
+input:focus{
+    border: solid #c2ab2b;
+}
+.page-wrapper{
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 800px;
+    height: 90%;
+    position: relative;
+}
+header{
+    padding: 0;
+    background: url("../res/img/header.png") no-repeat;
+    width: 800px;
+    height: 250px;
+    border:solid rgba(44, 136, 49, 0.7);
+    opacity: 1;
+}
+.strip-menu{
+    margin: 0 auto;
+    width: 610px;
+    height: 35px;
+    background: #ffffff;
+    font-size: 12px;
+    background: url("../res/img/menu_strip.png") no-repeat;
+}
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Allerta Stencil', sans-serif;
+    line-height: 35px;
+}
+.menu-list > li:last-child{
+    margin-right: 0px ;
+}
+.menu-list > li{
+    margin-right: 30px ;
+    display: inline;
+    text-align: center;
+    cursor: hand;
+}
+.mainContent{
+    width: 800px;
+    height: 80%;
+    background: rgba(2, 6, 2, 0.9);
+    border: dashed rgba(44, 136, 49, 0.7);
+    border-top: solid rgba(44, 136, 49, 0.7);
+    border-bottom: hidden;
+    padding-bottom: 30px;
+}
+.search-container{
+    margin: 0 auto;
+    margin-top: 20px;
+    width:235px;
+    height:25px;
+    line-height: 25px;
+}
+.table-container{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 600px;
+    height: 75%;
+    align-content: center;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(44, 136, 49, 0.7);
+    overflow-y: auto;
+}
+.title{
+    font-size: 24px;
+    font-family: 'Fredericka the Great', cursive;
+}
+.table-container>table{
+    border-color: rgba(44, 136, 49, 0.7);
+}
+.spoilerUI{
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 60px;
+}
+.addNewProcessor{
+    margin: 0 auto;
+    width: 200px;
+    height: 15%;
+    align-content: center;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Fredericka the Great', cursive;
+    color: rgba(44, 136, 49, 0.7);
+}
+.addNewProcessor input{
+    width: 100px;
+}
+.addNewProcessor>table{
+    border-color: rgba(44,136,39,0.0);
+}
+.footer{
+    margin: 0 auto;
+    margin-bottom:30px;
+    width: 800px;
+    height: 5%;
+    border: dotted rgba(44, 136, 49, 0.7);
+    border-top: solid rgba(44, 136, 49, 0.7);
+
+    background: rgba(2, 6, 2, 0.7);
+}
+
+.arrow {
+    margin: 0 auto;
+    display: block;
+    text-indent: -9999px;
+    width: 100px;
+    height: 82px;
+    background: url("../res/img/arrow.svg");
+    opacity: 0.5;
+    background-size: 100px 82px;
+}
+.arrow>a{
+    display: block;
+    text-align: center;
+    height: 100%;
+}
+.arrow:hover {
+    opacity: 1;
+    cursor: hand;
+}
